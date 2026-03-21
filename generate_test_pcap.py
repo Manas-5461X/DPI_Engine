@@ -256,7 +256,7 @@ def main():
         seq_base += 1000
     
     writer.close()
-    print(f"Created test_dpi.pcap with test traffic")
+    print("Created test_dpi.pcap with test traffic")
     print(f"  - {len(tls_connections)} TLS connections with SNI")
     print(f"  - {len(http_connections)} HTTP connections")
     print(f"  - {len(dns_queries)} DNS queries")

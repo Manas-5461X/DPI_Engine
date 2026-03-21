@@ -689,29 +689,40 @@ Packet arrives
 
 ### Manual Method (Terminal)
 
-If you prefer to use the Command Prompt or PowerShell directly, use these commands:
+If you prefer to use the Command Prompt or PowerShell directly, **you must first generate the test data** (if you don't already have a `.pcap` file):
 
-1.  **Go to your project folder**:
-    ```cmd
-    d:
-    cd "ALL\Study\Personal Projects\Packet_analyzer\Packet_analyzer"
-    ```
+**Step 1. Go to your project folder:**
+```cmd
+cd path/to/Packet_analyzer
+```
 
-2.  **Run the Multi-processed version** (High performance):
-    ```cmd
-    python -m src.dpi_mt test_dpi.pcap output.pcap
-    ```
+**Step 2. Generate Test Traffic (Run once):**
+```cmd
+python generate_test_pcap.py
+```
 
-3.  **Run the Simple version** (For learning/debugging):
-    ```cmd
-    python -m src.dpi_simple test_dpi.pcap output.pcap
-    ```
+**Step 2. Run the Multi-processed version** (High performance):
+```cmd
+python -m src.dpi_mt test_dpi.pcap output.pcap
+```
+
+*(Optional)* **Run the Simple version** (For learning/debugging):
+```cmd
+python -m src.dpi_simple test_dpi.pcap output.pcap
+```
+
+---
 
 ### Advanced Blocking (Apps, IPs, Domains)
 
-You can tell the analyzer to block specific traffic by adding "flags" to the command.
+You can tell the analyzer to block specific traffic by adding "flags" to your command. 
 
-**1. Block an Application (YouTube, Facebook, etc.):**
+**What you can block:**
+*   **Applications (`--block-app`)**: `YouTube`, `Facebook`, `TikTok`, `WhatsApp`, `Instagram`, `Twitter`, `Netflix`, `Amazon`, `Microsoft`, `Apple`, `Telegram`, `Spotify`, `Zoom`, `Discord`, `GitHub`, `Cloudflare`, `Google`.
+*   **IP Addresses (`--block-ip`)**: Any valid IPv4 address (e.g., `192.168.1.50`).
+*   **Domains (`--block-domain`)**: Any substring (e.g., `tiktok`, `porn`, `google`). If a domain contains this word, it drops the packet.
+
+**1. Block an Application:**
 ```cmd
 python -m src.dpi_mt test_dpi.pcap output.pcap --block-app YouTube
 ```
@@ -721,7 +732,7 @@ python -m src.dpi_mt test_dpi.pcap output.pcap --block-app YouTube
 python -m src.dpi_mt test_dpi.pcap output.pcap --block-ip 192.168.1.50
 ```
 
-**3. Block a Domain name (substring match):**
+**3. Block a Domain name:**
 ```cmd
 python -m src.dpi_mt test_dpi.pcap output.pcap --block-domain tiktok
 ```
