@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+
+# Packets (Large binary files, generated or test)
+*.pcap
+!test_dpi.pcap  # Keep the main test case if you want, or remove if you prefer purely dynamic
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Build artifacts (just in case)
+build/
+dist/
+*.egg-info/
