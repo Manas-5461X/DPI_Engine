@@ -853,6 +853,33 @@ The key insight is that even HTTPS traffic leaks the destination domain in the T
 
 ---
 
+## Responsible Use
+
+DPI Engine is intended for educational purposes, network analysis, cybersecurity research, and authorized testing.
+
+Users are responsible for ensuring that they have appropriate authorization to capture, inspect, analyze, or filter network traffic. Do not use this software to intercept communications, access data, or monitor networks without the necessary permission.
+
+The project is provided as-is. Users are responsible for evaluating its suitability, security, accuracy, and compliance with applicable laws and organizational policies before using it in any environment.
+
+The maintainers do not endorse unauthorized surveillance, interception, or disruption of network communications.
+
+---
+
+## License
+
+DPI Engine is licensed under the [MIT License](LICENSE).
+
+Copyright (c) 2026 Manas Gandhi.
+
+You are free to use, copy, modify, merge, publish, distribute, sublicense, and sell copies of the software, subject to the terms and conditions of the MIT License.
+
+The software is provided "AS IS", without warranty of any kind, express or implied. See the [LICENSE](LICENSE) file for the complete license terms.
+
+### Third-Party Components
+
+Third-party code, dependencies, datasets, and other external materials included in or used by this project may be subject to their own licenses and terms. Those terms remain applicable to the relevant materials.
+
+---
 ## Questions?
 
 If you have questions about any part of this project, the code is well-commented and follows the same flow described in this document. Start with the simple version (`src/dpi_simple.py`) to understand the concepts, then move to the multi-processed version (`src/dpi_mt.py`) to see how parallelism is added.
